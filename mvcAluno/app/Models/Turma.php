@@ -5,15 +5,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Aluno extends Model
+class Turma extends Model
 {
     protected $fillable = [
-        'nome',
-        'email',
-        'turma_id'
+        'numSala',
+        'serie'
     ];
 
     public function turma(){
-        return $this->belongsTo(Turma::class);
+        return $this->hasMany(Turma::class);
     }
 }
