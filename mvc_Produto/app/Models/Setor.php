@@ -4,16 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Setor extends Model{
-
-    protected $table = 'setores'; // deixar no plural e em português (tabela vindo como setors)
+class Setores extends Model
+{
+    protected $table = "setores";
 
     protected $fillable = [
         'nome',
-        'nCorredor'
+        'num_setor'
     ];
 
-    public function produtos(){
-        return $this->hasMany(Produto::class);
+    public function produto(){
+        return $this->hasMany(Produtos::class);
     }
 }
