@@ -14,7 +14,13 @@ class ProdutoController extends Controller
         return view('listarProdutos', compact('produtos'));
     }
 
+    // produtoController
     public function cadastro(){
+        if(auth()->user()->tipo != 'usuario'){
+            abort(403);
+            // return view('cadastroUsuario'); -> direcione para tela desejada caso não tenha cadastro
+        }
+
         $setores = Setores::get();
         return view('cadastroProduto', compact('setores'));
     }

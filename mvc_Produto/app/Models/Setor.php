@@ -4,16 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Setores extends Model
+class Setor extends Model
 {
-    protected $table = "setores";
-
     protected $fillable = [
         'nome',
-        'num_setor'
+        'num_corredor',
     ];
 
-    public function produto(){
-        return $this->hasMany(Produtos::class);
+    public function produtos(){
+        return $this->hasMany(Produto::class);
     }
 }
